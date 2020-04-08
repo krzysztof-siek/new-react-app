@@ -1,10 +1,10 @@
 import React from 'react';
+import Nav from './nav';
 
 function Header() {
     return (
         <>
-        <h2>welcome from header</h2>
-        <h2>hej</h2>
+        <Nav/>
         </>
       );
 }

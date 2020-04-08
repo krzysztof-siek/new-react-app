@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from "./header.jsx";
-import Main from "./main.jsx";
-import Footer from "./Footer.jsx";
-import './App.scss';
+import "./scss/reset.scss"
+import Header from "./layouts/partials/header.jsx";
+import Main from "./pages/main.jsx";
+import Footer from "./layouts/partials/footer.jsx";
+import './scss/App.scss';
 
 function App() {
     return (
         <>
-        <h2>welcome from app</h2>
         <Header/>
         <Main/>
         <Footer/>
