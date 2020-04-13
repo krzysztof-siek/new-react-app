@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../scss/nav.scss';
-import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 
 function nav() {
@@ -13,9 +13,7 @@ function nav() {
                     <li className="nav-item"><Link to="/Seriale" className="nav-link">Serial</Link></li>
                     <li className="nav-item"><Link to="/Top" className="nav-link">Top Imgb</Link></li>
                     <li className="nav-item"><Link to="/Zaloguj" className="nav-link">Zarejestruj / Zaloguj</Link></li>
-                    
-                </div>
-               
+                </div>  
            </div>
        </nav>
         </>

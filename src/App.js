@@ -5,18 +5,18 @@ import Header from "./layouts/partials/header.jsx";
 import Footer from "./layouts/partials/footer.jsx";
 import './scss/App.scss';
 
-import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import Main from './pages/main';
+import {BrowserRouter as Router, Link } from "react-router-dom";
+import Main from './pages/main.jsx';
 
 function App() {
     return (
         <>
         <div className="app">
-        <Router>
-        <Header/>
-        <Main/>
-        <Footer/>
-        </Router>
+          <Router>
+            <Header/>
+            <Main/>
+          </Router>
+          <Footer/>
         </div>
         </>
       );
