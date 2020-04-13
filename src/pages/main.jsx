@@ -35,6 +35,8 @@ const list = [
     fetchData = () => {
       console.log('fetch działa')
       fetch('https://jsonplaceholder.typicode.com/users')
+      // fetch('https://api.themoviedb.org/3/trending/all/day?api_key=77731e0cef7708f81c46f924efbac553')
+
   .then(response => response.json())
   .then(json => this.setState({ items: json}))
     }
