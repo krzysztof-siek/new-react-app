@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../scss/variables.scss';
 import '../../scss/nav.scss';
-import {Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 function nav() {
@@ -18,16 +18,16 @@ return (
             </div>
             <div className="nav-links">
                 <li className="nav-item">
-                    <Link to="/Filmy" className="nav-link">Film</Link>
+                    <NavLink to="/Filmy" className="nav-link">Film</NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link to="/Seriale" className="nav-link">Serial</Link>
+                    <NavLink to="/Seriale" className="nav-link">Serial</NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link to="/Top" className="nav-link">Top Imgb</Link>
+                    <NavLink to="/Top" className="nav-link">Top Imgb</NavLink>
                 </li>
                 <li className="nav-item">
-                    <Link to="/Zaloguj" className="nav-link">Zarejestruj / Zaloguj</Link>
+                    <NavLink to="/Zaloguj" className="nav-link">Zarejestruj / Zaloguj</NavLink>
                 </li>
                 
             </div>
