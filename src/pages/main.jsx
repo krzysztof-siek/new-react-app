@@ -34,7 +34,6 @@ const list = [
 
     fetchData = () => {
       console.log('fetch działa')
-      // fetch('https://jsonplaceholder.typicode.com/users')
       fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
 
   .then(response => response.json())

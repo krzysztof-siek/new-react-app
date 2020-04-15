@@ -1,21 +1,35 @@
+@import "variables";
+
 nav {
-    height: 50px;
+   background-color: $t-black;
     .nav {
-        max-width: 1310px;
-        margin: 0 auto;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        color: black;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10px;
+
+        .nav-brand {
+            width: 201px;
+            height: 72px;
+            .logo-img {
+                width: 100%;
+            }
+        }
+       
         .nav-links {
             display: flex;
             flex-direction: row;
+
             .nav-item {
-                margin: 10px 20px;
-                .nav-link {
-                    color: black;
-                }
+                margin: 0 20px;
             }
+            .nav-link {
+                color: $d-white;
+                font-size: $fs16;
+                font-weight: $fw5;
+            }
+            
         }
     }
     

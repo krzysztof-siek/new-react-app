@@ -1,0 +1,18 @@
+@import "variables";
+.container {
+    width: 100%;
+    max-width: 1370px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 50px;
+    background-color: $red;
+    color: $white;
+    font-size: $fs16;
+    font-weight: $fw6;
+    border-radius: 50px;
+    border:none;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}

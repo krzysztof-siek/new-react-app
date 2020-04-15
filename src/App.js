@@ -1,9 +1,10 @@
 import React from 'react';
-import "./scss/reset.scss"
-import "./scss/App.scss"
+import "./scss/reset.scss";
+import "./scss/general.scss";
+import "./scss/variables.scss";
+import "./scss/components.scss";
 import Header from "./layouts/partials/header.jsx";
 import Footer from "./layouts/partials/footer.jsx";
-import './scss/App.scss';
 
 import {BrowserRouter as Router, Link } from "react-router-dom";
 import Main from './pages/main.jsx';

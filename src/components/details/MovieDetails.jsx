@@ -6,21 +6,23 @@ const MovieDetails = (props) => {
     const spec = props.list.filter(
         el => el.id.toString() === props.match.params.id 
       );
-      // console.log(props.list.map(el => el.id))
-      // console.log(props.match.params.id *1)
-      // console.log(spec[0].popularity);
-      let title = spec.map(el => el.title)
-      let id = spec.map(el => el.id)
+     
       
+      let dupa = spec.map(el => (
+      <div className="mov-deac">
+
+      <h2>{el.title}  </h2>
+      <span>{el.id}</span>
+      <h4>tutaj będzie coć</h4>
+      <h3>{el.rease_date}</h3>
+      <h5>{el.vote_average}</h5>
+      </div>
+      ))
+
+
       return ( 
         <>
-        <h2>{title}</h2>
-        <h2>{id}</h2>
-        {/* <h1>{spec[0].title}</h1> */}
-        {/* <h2>{spec[0].overview}</h2>
-        <h2>{spec[0].relase_date}</h2>
-        <h2>{spec[0].poster_path}</h2>
-        <h2>{spec[0].vote_average}</h2> */}
+        {dupa}
         <Link to="/Filmy"> Powrót </Link>
         </>
      );
