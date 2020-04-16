@@ -19,3 +19,26 @@ $fw7: 700;
 
 // Line-heights 
 $lh60: 60px;
+
+
+
+
+
+$xs-size: 568px;
+$md-size: 768px;
+$lg-size: 992px;
+$xl-size: 1200px;
+
+
+@mixin xs {
+    @media (min-width: $xs-size) { @content; }
+  }
+@mixin md {
+    @media (min-width: $md-size) { @content; }
+  }
+@mixin lg {
+    @media (min-width: $lg-size) { @content; }
+  }
+@mixin xl {
+    @media (min-width: $xl-size) { @content; }
+  }

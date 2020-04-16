@@ -1,0 +1,38 @@
+header {
+    // min-height: 100vh;
+   
+    background-position: center -100px;
+    position: relative;
+
+    .bgc {
+        position: absolute;
+        top: 0;
+        left:0;
+        width: 100%;
+        z-index: -1;
+        
+        .header-bg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            .main-bgc {
+                width: 100%;
+            }
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left:0;
+                width: 100%;
+                height: 500px;
+                content: "";
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5917717428768383) 46%, rgba(138,32,31,0) 100%);
+            }
+
+        }
+    }
+       
+        
+        
+
+    
+}

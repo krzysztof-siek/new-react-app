@@ -29,7 +29,11 @@ return (
                 <li className="nav-item">
                     <NavLink to="/Zaloguj" className="nav-link">Zarejestruj / Zaloguj</NavLink>
                 </li>
-                
+            </div> 
+            <div className="nav-button">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
             </div>
         </div>
     </div>
