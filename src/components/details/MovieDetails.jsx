@@ -14,7 +14,7 @@ const MovieDetails = (props) => {
       <h2>{el.title}  </h2>
       <span>{el.id}</span>
       <h4>tutaj będzie coć</h4>
-      <h3>{el.rease_date}</h3>
+      <h3>{el.release_date}</h3>
       <h5>{el.vote_average}</h5>
       </div>
       ))

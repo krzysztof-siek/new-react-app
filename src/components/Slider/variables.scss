@@ -1,0 +1,44 @@
+// Colors 
+
+$red: #eb315a;
+$white: #fff;
+$d-white: #f7f7f7;
+$t-black: rgba(0,0,0,0.6);
+$bgc: #13151f;
+
+
+// Font-sizes 
+$fs16: 16px;
+
+
+// Font-weights 
+$fw4: 400;
+$fw5: 500;
+$fw6: 600;
+$fw7: 700;
+
+// Line-heights 
+$lh60: 60px;
+
+
+
+
+
+$xs-size: 568px;
+$md-size: 768px;
+$lg-size: 992px;
+$xl-size: 1200px;
+
+
+@mixin xs {
+    @media (min-width: $xs-size) { @content; }
+  }
+@mixin md {
+    @media (min-width: $md-size) { @content; }
+  }
+@mixin lg {
+    @media (min-width: $lg-size) { @content; }
+  }
+@mixin xl {
+    @media (min-width: $xl-size) { @content; }
+  }
