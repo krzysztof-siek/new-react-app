@@ -7,25 +7,6 @@ import Login from './Login';
 import {Switch, Route, withRouter } from "react-router-dom"
 import MovieDetails from '../components/details/MovieDetails';
 
-const list = [
-  {id:1,
-      name: "Czterej Pancerni i pies",
-      opcja: "link do czterej pancerni i pies",
-      opcja1: "opis tego filmu o czterech pancernych",
-      description: "dodatkowy opis filmy o czterech pancernych"
-  },
-  {id:2,
-      name: "Blow",
-      opcja: "link do blow",
-      opcja1: "Opis blow",
-      description: "Opis filmu blow"
-  },
-  {id:3,
-      name: "Gwiezdne wojny",
-      opcja: "link do gwiezdne wojny",
-      opcja1: "Opis gwiezdne wojny",
-      description: "Opis filmu gwiezdne wojny"
-  }]
 
   class Main extends Component {
     state = { 
@@ -33,7 +14,6 @@ const list = [
      }
 
     fetchData = () => {
-      console.log('fetch działa')
       fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
 
   .then(response => response.json())

@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Header from "./layouts/partials/header.jsx";
 import Footer from "./layouts/partials/footer.jsx";
 
-import {BrowserRouter as Router, Link } from "react-router-dom";
+import {BrowserRouter as Router } from "react-router-dom";
 import Main from './pages/main.jsx';
 
 function App() {

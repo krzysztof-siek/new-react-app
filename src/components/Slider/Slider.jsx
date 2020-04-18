@@ -12,7 +12,7 @@ export default class SimpleSlider extends Component {
       dots: true,
       infinite: true,
       slidesToScroll: 1,
-    className: "center",
+      className: "center",
       centerMode: true,
       slidesToShow: 1,
       speed: 500

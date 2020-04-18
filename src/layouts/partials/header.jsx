@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from './nav';
 import "../../scss/header.scss";
 
 
-function Header() {
-return (
-<>
-    <header>
+class Header extends Component {
+    state = {  }
+    render() { 
+        return ( 
+            <header>
       
-        <Nav />
-        <div className="header">
-            tutaj będzie slider
-        </div>
-    </header>
-</>
-);
+            <Nav />
+            <div className="header">
+                
+            </div>
+        </header>
+         );
+    }
 }
-
+ 
 export default Header;
