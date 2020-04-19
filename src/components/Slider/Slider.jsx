@@ -10,14 +10,14 @@ export default class SimpleSlider extends Component {
       dots: true,
       infinite: true,
       slidesToScroll: 1,
-      className: "center",
+    //   className: "center",
       centerMode: true,
       slidesToShow: 1,
       speed: 500
     };
     const {moviesList} = this.props;
     return (
-      <div>
+      <div className="slider">
         <Slider {...settings}>
             {moviesList.map(movie => <SliderItem key={movie.id} movie={movie}/> )}
         </Slider>
