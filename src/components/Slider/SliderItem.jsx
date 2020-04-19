@@ -2,10 +2,10 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const SliderItem = (props) => {
-    const {poster_path, title, release_date, vote_average, vote_count, overview} = props.el;
+    const {id, poster_path, title, release_date, vote_average, vote_count, overview} = props.movie;
 return (
 <>
-<Link to={`/Film/${props.el.id}`}>
+<Link to={`/Film/${id}`}>
     <div className="slider-item">
         <div className="item-poster">
             <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt=""/> 

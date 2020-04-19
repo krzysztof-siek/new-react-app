@@ -9,7 +9,7 @@ function Serials() {
         <>
         <div className="main">
         <h2>welcome from Serials</h2>
-        <SimpleSlider/>
+        {/* <SimpleSlider/> */}
         </div>
         </>
       );

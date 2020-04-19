@@ -11,9 +11,9 @@ return (
         <div className="nav">
             <div className="nav-brand">
                 <picture>
-                    <source srcset="./img/general/logo.webp" type="image/webp" />
-                    <source srcset="./img/general/logo.png" type="image/png" />
-                    <img src="./img/general/logo.png" class="logo-img" alt="Logo icon" />
+                    <source srcSet="./img/general/logo.webp" type="image/webp" />
+                    <source srcSet="./img/general/logo.png" type="image/png" />
+                    <img src="./img/general/logo.png" className="logo-img" alt="Logo icon" />
                 </picture>
             </div>
             <div className="nav-links">

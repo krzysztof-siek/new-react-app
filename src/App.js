@@ -5,11 +5,18 @@ import "./scss/variables.scss";
 import "./scss/components.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Header from "./layouts/partials/header.jsx";
-import Footer from "./layouts/partials/footer.jsx";
+import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import {BrowserRouter as Router } from "react-router-dom";
-import Main from './pages/main.jsx';
+import Header from "./layouts/partials/header";
+import Footer from "./layouts/partials/footer.jsx";
+import Movies from './pages/Movies';
+import Serials from './pages/Serials';
+import Top from './pages/Top';
+import MovieDetails from './components/details/MovieDetails';
+import Login from "./pages/Login";
+
+
+
 
 function App() {
     return (
@@ -17,9 +24,25 @@ function App() {
         <div className="app">
           <Router>
             <Header/>
-            <Main/>
-          </Router>
-          <Footer/>
+                <Switch>
+                    <Route path="/Filmy">
+                        <Movies />
+                    </Route>
+                    <Route path="/Seriale">
+                        <Serials />
+                    </Route>
+                    <Route path="/Top">
+                        <Top />
+                    </Route>
+                    <Route path="/Zaloguj">
+                        <Login />
+                    </Route>
+                    <Route path="/Film/:id">
+                        <MovieDetails />
+                    </Route>
+                </Switch>
+            </Router>
+            <Footer/>
         </div>
         </>
       );

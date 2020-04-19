@@ -4,8 +4,6 @@ import "../../scss/variables.scss";
 import "./slider.scss";
 import SliderItem from "./SliderItem";
 
-
-
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
@@ -17,11 +15,11 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       speed: 500
     };
-
+    const {moviesList} = this.props;
     return (
       <div>
         <Slider {...settings}>
-            {this.props.el.list.map(el => <SliderItem el={el}/> )}
+            {moviesList.map(movie => <SliderItem key={movie.id} movie={movie}/> )}
         </Slider>
       </div>
     );

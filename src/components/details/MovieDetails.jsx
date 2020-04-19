@@ -1,31 +1,36 @@
-import React from 'react';
 import {withRouter, Link} from "react-router-dom";
-
-const MovieDetails = (props) => {
-    
-    const spec = props.list.filter(
-        el => el.id.toString() === props.match.params.id 
-      );
-     
-      
-      let dupa = spec.map(el => (
-      <div className="mov-deac">
-
-      <h2>{el.title}  </h2>
-      <span>{el.id}</span>
-      <h4>tutaj będzie coć</h4>
-      <h3>{el.release_date}</h3>
-      <h5>{el.vote_average}</h5>
-      </div>
-      ))
+import React, { Component } from 'react';
+import "./MovieDetails.scss";
 
 
-      return ( 
-        <>
-        {dupa}
-        <Link to="/Filmy"> Powrót </Link>
-        </>
-     );
+class MovieDetails extends Component {
+    state = { 
+        movieDetails: []
+     }
+
+    getMovieDetalis = () => {
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=77731e0cef7708f81c46f924efbac553&language=en-US`)
+
+  
+    .then(response => response.json())
+    .then(json => this.setState({ movieDetails: json}))
+      }
+  
+      componentDidMount() {
+        this.getMovieDetalis()
+      }
+
+    render() { 
+        const {title, overview} = this.state.movieDetails;
+        return ( 
+           
+            <div className="movie-details">
+                <h3>{title}</h3>
+                <h3>{overview}</h3>
+                <Link to="/Filmy"> Powrót </Link>
+            </div>
+         );
+    }
 }
  
 export default withRouter(MovieDetails);
