@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SimpleSlider from '../components/Slider/Slider';
+import "../scss/pages/Movies.scss";
 
 class Movies extends Component {
     state = { 
@@ -20,9 +21,25 @@ class Movies extends Component {
     render() { 
         return ( 
             <>
-            <div className="movies-list">
-            <SimpleSlider moviesList={this.state.moviesList}/>
-        </div>
+              <div className="movies">
+                  <SimpleSlider moviesList={this.state.moviesList}/>
+                  <div className="movies-list-cont">
+                  <div className="container">
+                        <div className="movies-list">
+                            <div className="section-welcome">
+                                <div className="section-img">
+                                    <picture>
+                                        <source srcSet="./img/movie/icon_Player.webp" type="image/webp" />
+                                        <source srcSet="./img/movie/icon_Player.png" type="image/png" />
+                                        <img src="./img/movie/icon_Player.png" className="sec-img" alt="icon Player" />
+                                    </picture>
+                                </div>
+                                <h3 className="section-text">Movie Grid</h3>
+                            </div>
+                            </div>
+                        </div>
+                  </div>
+              </div>
         </>
          );
     }

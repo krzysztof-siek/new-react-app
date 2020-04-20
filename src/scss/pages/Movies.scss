@@ -1,0 +1,19 @@
+.movies {
+	margin-top: -150px;
+	width: 100%;
+	.movies-list-cont {
+		margin-top: 50px;
+		min-height: 120vh;
+		background-image: url("/img/movie/shape_bg.png"), url("/img/movie/shape2_bg.png");
+		background-position: left top, right bottom;
+		background-repeat: no-repeat;	
+		width: 100%;
+	}
+
+	// dać przezroczystość albo przyciemnienie na background 
+	
+	.movies-list {
+		min-height: 120vh;
+	}
+
+}

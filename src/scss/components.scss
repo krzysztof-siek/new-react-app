@@ -67,3 +67,24 @@
         }
     }
 }
+
+.section-welcome{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .section-img {
+        width: 49px;
+        height: 52px;
+        margin-right: 20px;
+        .sec-img {
+            width: 100%;
+        }
+    }
+    .section-text {
+        color:$d-white;
+        font-size: $fs36;
+        font-weight: $fw7;
+    }
+
+}

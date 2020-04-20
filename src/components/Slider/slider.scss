@@ -1,110 +1,143 @@
 @import "../../scss/App.scss";
 
-
-
-
-.movies-list {
-    margin-top: -200px;
+.slider {
 
     .slick-list {
         padding: 50px 0 !important;
     }
-    
-}
-
-.slick-prev {
-    left: 200px;
-    z-index: 100;
-}
-.slick-next {
-    right: 200px;
-    z-index: 100;
-}
 
 
+    .slick-dots {
+        li {
 
-.slider-item {
-    width: 50%;
-    background-color: $bgc;
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    overflow: visible;
-    padding-left: 50px;
-    color: $white;
-    // box-shadow: 10px 9px 28px 2px rgba(255,255,255,.1);
-    box-shadow: 10px 9px 28px 2px rgba(0,0,0,0.75);
+            button {
+                background-color: grey;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
 
-    .slick-slide  {
-        padding: 50px 0;
-        border: 2px solid white;
-    }
-    
-    .item-poster {
-        height: 500px;
-        transform: translateY(-50px);
-        opacity: visible;
-        box-shadow: 15px 15px 15px 0px rgba(0,0,0,0.52);
-        img {
-           height: 100%;
-        }
-    }
 
-    .item-infos {
-        padding: 50px;
-    position: relative;
-
-        
-        .flex-box, .flex-box-second {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            justify-content: space-between;
-
-            .item-title {
-                font-size: 30px;
-                color: $d-white;
-                font-weight: 500;
-                max-width: 450px;
-            }
-
-        }
-
-        .flex-box-second {
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0 50px 0; 
-            
-            .stars-rating {
-                margin-right: 50px;
-                .star {
-                    font-size: 28px;
+                &:before {
+                    display: none;
                 }
             }
-            
-        }
-        .item-desc {
-            color: $dark;
-        }
-        .watch-trailer {
-            position: absolute;
-            width: calc(100% - 100px);
-            bottom: 50px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
 
-            .btn {
+            &.slick-active {
+                button {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+
+    .slick-prev {
+        left: 150px;
+        z-index: 100;
+    }
+
+    .slick-next {
+        right: 150px;
+        z-index: 100;
+    }
+
+
+    .slider-item {
+        width: 65%;
+        background-color: $bgc;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        overflow: visible;
+        padding-left: 50px;
+        color: $white;
+        // box-shadow: 10px 9px 28px 2px rgba(255,255,255,.1);
+        box-shadow: 10px 9px 28px 2px rgba(0, 0, 0, 0.75);
+
+        .slick-slide {
+            padding: 50px 0;
+            border: 2px solid white;
+        }
+
+        .item-poster {
+            height: 500px;
+            transform: translateY(-50px);
+            opacity: visible;
+            box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.52);
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .item-infos {
+            padding: 50px;
+            position: relative;
+
+
+            .flex-box,
+            .flex-box-second {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                .item-title {
+                    font-size: 30px;
+                    color: $d-white;
+                    font-weight: 500;
+                    max-width: 450px;
+                }
+
+            }
+
+            .flex-box-second {
+                justify-content: space-between;
+                align-items: center;
+                margin: 10px 0 23px 0;
+
+                .stars-rating {
+                    margin-right: 50px;
+
+                    .star {
+                        font-size: 28px;
+                    }
+                }
+
+            }
+
+            .item-desc {
+                color: $dark;
+                display: -webkit-box;
+                max-height: 200px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 10;
+                -webkit-box-orient: vertical;
+                line-height: 20px;
+
+            }
+
+            .watch-trailer {
+                position: absolute;
+                width: calc(100% - 100px);
+                bottom: 50px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-around;
-                padding: 0;
-                height: 50px;
-                width: 200px;
+                justify-content: space-between;
+
+                .btn {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    padding: 0;
+                    height: 50px;
+                    width: 200px;
+                }
             }
+
         }
-        
     }
+
 }
