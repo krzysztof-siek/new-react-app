@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SimpleSlider from '../components/Slider/Slider';
 import "../scss/pages/Movies.scss";
 
+import {NavLink} from "react-router-dom";
+
 class Movies extends Component {
     state = { 
         moviesList: []
@@ -36,11 +38,16 @@ class Movies extends Component {
                                 </div>
                                 <h3 className="section-text">Movie Grid</h3>
                             </div>
+                            {/* TUTAJ DAĆ ROUTE I NAV LINKI I W ZALEŻNOŚCI OD KLIKNIĘTEGO LINKA BĘDZIE SIĘ ODPOWIEDNIA ZAWARTOŚĆ WYŚWIETLAŁA!!  */}
                             <ul className="movie-category">
-                                    <li className="category-item active">Ostatnio dodane</li>
-                                    <li className="category-item">Oczekiwane</li>
-                                    <li className="category-item">Najwyżej oceniane</li>
+                                <li className="category-item active"> <NavLink to='/Film/Latest'>Ostatnio dodane</NavLink></li> 
+                                <li className="category-item"> <NavLink to="/Film/Comming-soon">Oczekiwane</NavLink></li>
+                                <li className="category-item"><NavLink to='Flim/Top-rated'> Najwyżej oceniane </NavLink></li>
+                               
                            </ul>
+                        </div>
+                        <div className="movies-list">
+                            <h3>tutaj będzie react router</h3>
                         </div>
                     </div>
                   </div>
