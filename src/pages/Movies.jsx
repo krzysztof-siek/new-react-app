@@ -24,8 +24,8 @@ class Movies extends Component {
               <div className="movies">
                   <SimpleSlider moviesList={this.state.moviesList}/>
                   <div className="movies-list-cont">
-                  <div className="container">
-                        <div className="movies-list">
+                    <div className="container">
+                        <div className="welcome">
                             <div className="section-welcome">
                                 <div className="section-img">
                                     <picture>
@@ -36,8 +36,13 @@ class Movies extends Component {
                                 </div>
                                 <h3 className="section-text">Movie Grid</h3>
                             </div>
-                            </div>
+                            <ul className="movie-category">
+                                    <li className="category-item active">Ostatnio dodane</li>
+                                    <li className="category-item">Oczekiwane</li>
+                                    <li className="category-item">Najwyżej oceniane</li>
+                           </ul>
                         </div>
+                    </div>
                   </div>
               </div>
         </>
