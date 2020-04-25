@@ -7,7 +7,7 @@ return (
     <footer>
         <div className="container">
             <div className="footer-panel">
-                <div className="footer-name">
+                <div className="footer-column">
                     <div className="nav-brand">
                         <picture>
                             <source srcSet="./img/general/logo.webp" type="image/webp" />
@@ -15,14 +15,23 @@ return (
                             <img src="./img/general/logo.png" className="logo-img" alt="Logo icon" />
                         </picture>
                     </div>
+                    <h3 className="mid-text">regulamin</h3>
+                    <h3 className="mid-text">regulamin</h3>
+                    
                 </div>
-                <div className="legal">
+                <div className="footer-column">
+                    <h3 className="title-text">regulamin</h3>
+                    <h3 className="mid-text">regulamin</h3>
                     <h3 className="mid-text">regulamin</h3>
                 </div>
-                <div className="account">
+                <div className="footer-column">
+                    <h3 className="title-text">Info o koncie</h3>
+                    <h3 className="mid-text">Info o koncie</h3>
                     <h3 className="mid-text">Info o koncie</h3>
                 </div>
-                <div className="newsletter">
+                <div className="footer-column">
+                    <h3 className="title-text">newsletter</h3>
+                    <h3 className="mid-text">newsletter</h3>
                     <h3 className="mid-text">newsletter</h3>
                 </div>
             </div>
