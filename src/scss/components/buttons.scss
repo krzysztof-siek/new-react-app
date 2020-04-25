@@ -1,0 +1,47 @@
+.btn {
+    padding: 10px 50px;
+    font-size: $fs16;
+    font-weight: $fw6;
+    border-radius: 50px;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    color: $white;
+    border: none;
+    background-color: $red;
+}
+
+.btn-secondary {
+    // background: linear-gradient(-60deg, #c340ca 0%, #963dad 100%);
+    background: transparent;
+    border: 1px solid transparent;
+    color: $d-white;
+    transition: .5s;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    border: 2px solid #963dad;
+    outline: none;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(0%);
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: linear-gradient(-60deg, #c340ca 0%, #963dad 100%);
+        transition: 1s;
+        z-index: -1;
+    }
+
+    &:hover {
+        &:before {
+            transform: translateX(100%);
+        }
+    }
+}

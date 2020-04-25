@@ -1,0 +1,13 @@
+footer {
+    display: flex;
+    flex-direction: column;
+
+    .footer-panel {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        
+    }
+}   

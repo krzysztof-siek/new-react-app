@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import "../../scss/variables.scss";
-import "./slider.scss";
 import SliderItem from "./SliderItem";
 
 export default class SimpleSlider extends Component {
