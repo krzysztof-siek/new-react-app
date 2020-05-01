@@ -27,11 +27,15 @@
 		.welcome {
 			z-index: 1;
 			display: flex;
-			flex-direction: row;
+			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
 			border-bottom: 1px solid white;
-			padding: 20px 0;
+            padding: 20px 0;
+            
+            @include lg {
+                flex-direction: row;
+            }
 
 			.movie-category {
 				display: flex;

@@ -31,27 +31,49 @@
     }
 
     .slick-prev {
-        left: 150px;
+        top: 650px;
+        left: 50px;
         z-index: 100;
+
+        @include lg {
+            left: 150px;
+            z-index: 100;
+            top:50%;
+        }
     }
 
     .slick-next {
-        right: 150px;
+        top: 650px;
+        right: 50px;
         z-index: 100;
+
+        @include lg {
+            top:50%;
+            right: 150px;
+        }
     }
 
 
     .slider-item {
-        width: 65%;
         background-color: $bgc;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin: 0 auto;
         overflow: visible;
-        padding-left: 50px;
+        padding-left: 20px;
         color: $white;
         // box-shadow: 10px 9px 28px 2px rgba(255,255,255,.1);
-        box-shadow: 10px 9px 28px 2px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 9px 28px 2px rgba(170, 155, 155, 0.75);
+        min-height: 650px;
+        position: relative;
+
+        @include lg {
+            min-height: unset;
+            flex-direction: row;
+        width: 65%;
+        padding-left: 50px;
+
+        }
 
         .slick-slide {
             padding: 50px 0;
@@ -59,10 +81,16 @@
         }
 
         .item-poster {
-            height: 500px;
+            height: 200px;
+            width: 130px;
             transform: translateY(-50px);
             opacity: visible;
             box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.52);
+
+            @include lg {
+                height: 500px;
+                width: inherit;
+            }
 
             img {
                 height: 100%;
@@ -70,30 +98,47 @@
         }
 
         .item-infos {
+            // position: relative;
+
+            @include lg {
             padding: 50px;
-            position: relative;
+            }
 
 
             .flex-box,
             .flex-box-second {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-between;
+
+                @include lg {
+                    flex-direction: row;
+                    }
 
                 .item-title {
                     font-size: 30px;
                     color: $d-white;
                     font-weight: 500;
                     max-width: 450px;
+                    display: -webkit-box;
+                    max-height: 95px;
+                     overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
                 }
 
             }
 
             .flex-box-second {
                 justify-content: space-between;
-                align-items: center;
+                align-items: flex-start;
                 margin: 10px 0 23px 0;
+
+                @include lg {
+                    align-items: center;
+                }
 
                 .stars-rating {
                     margin-right: 50px;
@@ -119,12 +164,20 @@
 
             .watch-trailer {
                 position: absolute;
-                width: calc(100% - 100px);
+                // width: calc(100% - 100px);
                 bottom: 50px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+
+                .watch {
+                    margin-right: 30px;
+                    display: none;
+                    @include lg {
+                        display: block;
+                    }
+                }
 
                 .btn {
                     display: flex;

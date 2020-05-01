@@ -1,18 +1,39 @@
 footer {
     display: flex;
     flex-direction: column;
+    margin-top: 300px;
 
     .footer-panel {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: 50px 0;
+        align-items: center;
+        padding: 50px auto;
+
+
+        @include lg {
+            flex-direction: row;
+            align-items: flex-start;
+
+        }
 
         .footer-column {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+
+            @include lg {
+                align-items: flex-start;
+            }
+                
+
+            &.mobile-noVisible {
+                display: none;
+
+                @include lg {
+                    display: block;
+                }
+            }
 
             .nav-brand {
                 margin-bottom: 40px;
@@ -28,17 +49,21 @@ footer {
                 line-height: 20px;
                 cursor: pointer;
 
-                        &.subscribe {
-                            max-width: 285px;
-                        }
+                &.subscribe {
+                    
+                    @include lg {
+                        max-width: 285px;
+                    }
+                }
+
 
                 .strong {
                     color: $red;
                     font-weight: $fw5;
                 }
             }
-            
-            
+
+
             .input {
                 position: relative;
                 margin-bottom: 15px;
@@ -49,15 +74,16 @@ footer {
                     padding: 10px 30px;
                     outline: none;
                     color: $white2;
-                 }
-                 .newsletterInputIcon {
+                }
+
+                .newsletterInputIcon {
                     position: absolute;
-                    top:50%;
+                    top: 50%;
                     right: 20px;
                     transform: translateY(-50%);
                 }
             }
-            
+
         }
     }
 
@@ -69,15 +95,25 @@ footer {
         align-items: center;
         justify-content: space-between;
 
-        .angleUp {
-            margin-left: 20px;
-            transition: .3s;
-            &:hover {
-                transform: translateY(-5px);
+        .backToTop {
+            display: none;
+
+            @include md {
+                display: block;
+            }
+
+            .angleUp {
+                margin-left: 20px;
+                transition: .3s;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+
+            .strong {
+                color: $red;
             }
         }
-        .strong {
-            color: $red;
-        }
     }
-}   
+}

@@ -23,13 +23,13 @@ return (
                     <h3 className="mid-text">Call us: (+880) 111 222 3456</h3>
                     
                 </div>
-                <div className="footer-column">
+                <div className="footer-column mobile-noVisible">
                     <h3 className="title-text">Legal</h3>
                     <h3 className="mid-text">Terms of Use</h3>
                     <h3 className="mid-text">Privacy Policy</h3>
                     <h3 className="mid-text">Security</h3>
                 </div>
-                <div className="footer-column">
+                <div className="footer-column mobile-noVisible">
                     <h3 className="title-text">Account</h3>
                     <h3 className="mid-text">My Account</h3>
                     <h3 className="mid-text">Watchlist</h3>
