@@ -10,7 +10,7 @@ class Header extends Component {
             <header>
       
             <Nav />
-            <div className="header">
+            <div className="header" id="header">
                 
             </div>
         </header>
