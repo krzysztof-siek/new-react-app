@@ -6,6 +6,7 @@ import TopRatedList from "../components/movie/TopRatedList";
 
 const categoryLinkArray = ["movie/top_rated", "trending/movie/week", "movie/upcoming"];
 const categoryTitleArray = ["Najwyżej oceniane filmy", "Popularne w tym tygodniu", "Oczekiwane"];
+const APIKey= "api_key=77731e0cef7708f81c46f924efbac553";
 
 class Movies extends Component {
     state = { 
@@ -17,22 +18,20 @@ class Movies extends Component {
 
 
     fetchPopularMovies = () => {
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
-  
-    .then(response => response.json())
-    .then(json => this.setState({ mostPopular: json.results}))
-      }
+        fetch(`https://api.themoviedb.org/3/discover/movie?${APIKey}&language=pl-PL&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
+        .then(response => response.json())
+        .then(json => this.setState({ mostPopular: json.results}))
+    }
 
     fetchCategoryMovies = () => {
-        fetch(`https://api.themoviedb.org/3/${this.state.choosedCategory}?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL&page=1`)
+        fetch(`https://api.themoviedb.org/3/${this.state.choosedCategory}?${APIKey}&language=pl-PL&page=1`)
         .then(response => response.json())
         .then(json => this.setState({categoryMovies: json.results}))
     }
   
       componentDidMount() {
         this.fetchPopularMovies()
-        this.fetchCategoryMovies()
-        
+        this.fetchCategoryMovies()    
       }
 
       componentDidUpdate(prevProps, prevState) {
@@ -41,23 +40,21 @@ class Movies extends Component {
         } else {
             console.log('Zmieniam kategorię')
         }
-  }
+    }
         
       category = (props) => {
-          console.log(props)
          this.setState({
              choosedCategory: categoryLinkArray[props],
              activeCategory: props
-         })
-         
+         })   
       }
 
     render() { 
-        
+        const {mostPopular,activeCategory, categoryMovies} = this.state;
         return ( 
             <>
               <div className="movies">
-                  <SimpleSlider moviesList={this.state.mostPopular}/>
+                  <SimpleSlider moviesList={mostPopular}/>
                   <div className="movies-list-cont">
                     <div className="container">
                         <div className="welcome">
@@ -69,18 +66,18 @@ class Movies extends Component {
                                         <img src="./img/movie/icon_Player.png" className="sec-img" alt="icon Player" />
                                     </picture>
                                 </div>
-                                <h3 className="section-text">{categoryTitleArray[this.state.activeCategory]}</h3>
+                                <h3 className="section-text">{categoryTitleArray[activeCategory]}</h3>
                             </div>
 
                             <ul className="movie-category">
-                                <li className={this.state.activeCategory == 0 ? "category-item active" : "category-item"}  onClick={() => this.category(0)}>Najwyżej oceniane</li>
-                                <li className={this.state.activeCategory == 1 ?  "category-item active" : "category-item"} onClick={() => this.category(1)}>Popularne</li> 
-                                <li className={this.state.activeCategory  == 2 ?  "category-item active" : "category-item"}  onClick={() => this.category(2)}>Oczekiwane</li>
+                                <li className={activeCategory == 0 ? "category-item active" : "category-item"}  onClick={() => this.category(0)}>Najwyżej oceniane</li>
+                                <li className={activeCategory == 1 ?  "category-item active" : "category-item"} onClick={() => this.category(1)}>Popularne</li> 
+                                <li className={activeCategory  == 2 ?  "category-item active" : "category-item"}  onClick={() => this.category(2)}>Oczekiwane</li>
                                
                            </ul>
                         </div>
                         <div className="movies-list">
-                            <TopRatedList movies={this.state.categoryMovies} />
+                            <TopRatedList movies={categoryMovies} />
                         </div>
                     </div>
                   </div>
