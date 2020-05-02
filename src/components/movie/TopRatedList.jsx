@@ -5,7 +5,7 @@ const TopRatedList = (props) => {
   
     return ( 
         <div className="topRatedList">
-            {props.topRated.map(el => <SingleMovie key={el.id} movie={el}/>)}
+            {props.movies.map(el => <SingleMovie key={el.id} movie={el}/>)}
         </div>
      );
 }

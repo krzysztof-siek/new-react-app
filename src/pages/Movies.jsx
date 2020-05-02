@@ -2,30 +2,45 @@ import React, { Component } from 'react';
 import SimpleSlider from '../components/Slider/Slider';
 import "../scss/pages/Movies.scss";
 
-import {NavLink} from "react-router-dom";
 import TopRatedList from "../components/movie/TopRatedList";
 class Movies extends Component {
     state = { 
         mostPopular: [],
-        topRated: []
+        categoryMovies: [],
+        choosedCategory: "trending/movie/week"
      }
 
     fetchPopularMovies = () => {
-        fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
+        fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
   
     .then(response => response.json())
     .then(json => this.setState({ mostPopular: json.results}))
       }
 
-    fetchTopRatedMovies = () => {
-        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=77731e0cef7708f81c46f924efbac553&language=en-US&page=1')
+    fetchCategoryMovies = () => {
+        fetch(`https://api.themoviedb.org/3/${this.state.choosedCategory}?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL&page=1`)
         .then(response => response.json())
-        .then(json => this.setState({topRated: json.results}))
+        .then(json => this.setState({categoryMovies: json.results}))
     }
   
       componentDidMount() {
         this.fetchPopularMovies()
-        this.fetchTopRatedMovies()
+        this.fetchCategoryMovies()
+        
+      }
+
+      componentDidUpdate(prevProps, prevState) {
+        if(this.state.choosedCategory !== prevState.choosedCategory){
+                  this.fetchCategoryMovies();
+        } else {
+            console.log('Zmieniam kategorię')
+        }
+  }
+        
+      category = (props) => {
+         this.setState({
+             choosedCategory: props
+         })
       }
 
     render() { 
@@ -44,18 +59,18 @@ class Movies extends Component {
                                         <img src="./img/movie/icon_Player.png" className="sec-img" alt="icon Player" />
                                     </picture>
                                 </div>
-                                <h3 className="section-text">Top Movies</h3>
+                                <h3 className="section-text">Movies</h3>
                             </div>
-                            {/* TUTAJ DAĆ ROUTE I NAV LINKI I W ZALEŻNOŚCI OD KLIKNIĘTEGO LINKA BĘDZIE SIĘ ODPOWIEDNIA ZAWARTOŚĆ WYŚWIETLAŁA!!  */}
+
                             <ul className="movie-category">
-                                <li className="category-item active"> <NavLink to='/Film/Latest'>Ostatnio dodane</NavLink></li> 
-                                <li className="category-item"> <NavLink to="/Film/Comming-soon">Oczekiwane</NavLink></li>
-                                <li className="category-item"><NavLink to='Flim/Top-rated'> Najwyżej oceniane </NavLink></li>
+                                <li className="category-item active"  onClick={() => this.category("movie/top_rated")}>Najwyżej oceniane</li>
+                                <li className="category-item " onClick={() => this.category("trending/movie/week")}>Popularne</li> 
+                                <li className="category-item"  onClick={() => this.category("movie/upcoming")}>Oczekiwane</li>
                                
                            </ul>
                         </div>
                         <div className="movies-list">
-                            <TopRatedList topRated={this.state.topRated} />
+                            <TopRatedList movies={this.state.categoryMovies} />
                         </div>
                     </div>
                   </div>
