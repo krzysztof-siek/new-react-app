@@ -1,12 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleMovie = (props) => {
-    const {title, poster_path, vote_count, vote_average} = props.movie;
+    const {title, poster_path, vote_count, vote_average, id} = props.movie;
     
     return ( 
         <div className="singleMovie">
             <div className="poster-img">
-                <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt="poster"/> 
+                <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt="poster" className='img-poster'/> 
+                <Link to={`/Film/${id}`} className="img-play">
+                    <img src="/img/movie/icon_play.png" alt="play icon" className='img'/>
+                </Link>
             </div>
             <h3 className="title">{title}</h3>
             <div className="flex">
