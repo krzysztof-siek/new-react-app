@@ -3,12 +3,18 @@ import SimpleSlider from '../components/Slider/Slider';
 import "../scss/pages/Movies.scss";
 
 import TopRatedList from "../components/movie/TopRatedList";
+
+const categoryLinkArray = ["movie/top_rated", "trending/movie/week", "movie/upcoming"];
+const categoryTitleArray = ["Najwyżej oceniane filmy", "Popularne w tym tygodniu", "Oczekiwane"];
+
 class Movies extends Component {
     state = { 
         mostPopular: [],
         categoryMovies: [],
-        choosedCategory: "trending/movie/week"
+        choosedCategory: "trending/movie/week",
+        activeCategory: 1,
      }
+
 
     fetchPopularMovies = () => {
         fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
@@ -38,12 +44,16 @@ class Movies extends Component {
   }
         
       category = (props) => {
+          console.log(props)
          this.setState({
-             choosedCategory: props
+             choosedCategory: categoryLinkArray[props],
+             activeCategory: props
          })
+         
       }
 
     render() { 
+        
         return ( 
             <>
               <div className="movies">
@@ -59,13 +69,13 @@ class Movies extends Component {
                                         <img src="./img/movie/icon_Player.png" className="sec-img" alt="icon Player" />
                                     </picture>
                                 </div>
-                                <h3 className="section-text">Movies</h3>
+                                <h3 className="section-text">{categoryTitleArray[this.state.activeCategory]}</h3>
                             </div>
 
                             <ul className="movie-category">
-                                <li className="category-item active"  onClick={() => this.category("movie/top_rated")}>Najwyżej oceniane</li>
-                                <li className="category-item " onClick={() => this.category("trending/movie/week")}>Popularne</li> 
-                                <li className="category-item"  onClick={() => this.category("movie/upcoming")}>Oczekiwane</li>
+                                <li className={this.state.activeCategory == 0 ? "category-item active" : "category-item"}  onClick={() => this.category(0)}>Najwyżej oceniane</li>
+                                <li className={this.state.activeCategory == 1 ?  "category-item active" : "category-item"} onClick={() => this.category(1)}>Popularne</li> 
+                                <li className={this.state.activeCategory  == 2 ?  "category-item active" : "category-item"}  onClick={() => this.category(2)}>Oczekiwane</li>
                                
                            </ul>
                         </div>
