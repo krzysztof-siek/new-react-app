@@ -95,6 +95,10 @@ footer {
         align-items: center;
         justify-content: space-between;
 
+        .strong {
+            color: $red;
+        }
+        
         .backToTop {
             display: none;
 
@@ -111,9 +115,7 @@ footer {
                 }
             }
 
-            .strong {
-                color: $red;
-            }
+            
         }
     }
 }

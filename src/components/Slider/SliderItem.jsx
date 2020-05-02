@@ -15,7 +15,7 @@ return (
         <div className="item-infos">
             <div className="flex-box">
                 <h3 className="item-title">{title}</h3>
-                <h4>{release_date}</h4>
+                <h4 className="item-relase">{release_date}</h4>
             </div>
             <div className="flex-box-second">
                 <div className="stars-rating">
