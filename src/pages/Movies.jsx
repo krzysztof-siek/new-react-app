@@ -3,28 +3,36 @@ import SimpleSlider from '../components/Slider/Slider';
 import "../scss/pages/Movies.scss";
 
 import {NavLink} from "react-router-dom";
-
+import TopRatedList from "../components/movie/TopRatedList";
 class Movies extends Component {
     state = { 
-        moviesList: []
+        mostPopular: [],
+        topRated: []
      }
 
-    fetchData = () => {
+    fetchPopularMovies = () => {
         fetch('https://api.themoviedb.org/3/discover/movie?api_key=77731e0cef7708f81c46f924efbac553&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
   
     .then(response => response.json())
-    .then(json => this.setState({ moviesList: json.results}))
+    .then(json => this.setState({ mostPopular: json.results}))
       }
+
+    fetchTopRatedMovies = () => {
+        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=77731e0cef7708f81c46f924efbac553&language=en-US&page=1')
+        .then(response => response.json())
+        .then(json => this.setState({topRated: json.results}))
+    }
   
       componentDidMount() {
-        this.fetchData()
+        this.fetchPopularMovies()
+        this.fetchTopRatedMovies()
       }
 
     render() { 
         return ( 
             <>
               <div className="movies">
-                  <SimpleSlider moviesList={this.state.moviesList}/>
+                  <SimpleSlider moviesList={this.state.mostPopular}/>
                   <div className="movies-list-cont">
                     <div className="container">
                         <div className="welcome">
@@ -36,7 +44,7 @@ class Movies extends Component {
                                         <img src="./img/movie/icon_Player.png" className="sec-img" alt="icon Player" />
                                     </picture>
                                 </div>
-                                <h3 className="section-text">Movie Grid</h3>
+                                <h3 className="section-text">Top Movies</h3>
                             </div>
                             {/* TUTAJ DAĆ ROUTE I NAV LINKI I W ZALEŻNOŚCI OD KLIKNIĘTEGO LINKA BĘDZIE SIĘ ODPOWIEDNIA ZAWARTOŚĆ WYŚWIETLAŁA!!  */}
                             <ul className="movie-category">
@@ -47,7 +55,7 @@ class Movies extends Component {
                            </ul>
                         </div>
                         <div className="movies-list">
-                            <h3>tutaj będzie react router</h3>
+                            <TopRatedList topRated={this.state.topRated} />
                         </div>
                     </div>
                   </div>

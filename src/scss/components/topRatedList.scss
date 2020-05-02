@@ -1,0 +1,38 @@
+.topRatedList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    .singleMovie {
+        position: relative;
+        margin: 30px;
+        
+        .poster-img {
+            height: 400px;
+            width: 265px;
+            border-radius: 10px;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+                min-height: 400px;;
+            }
+        }
+        .title {
+            line-height: 30px;
+            display: -webkit-box;
+            max-height: 75px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-top: 10px;
+        }
+        .flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+           
+        }
+    }
+}
