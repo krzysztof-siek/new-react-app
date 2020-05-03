@@ -8,10 +8,8 @@ class Header extends Component {
     render() { 
         return ( 
             <header>
-      
-            <Nav  user={this.props.user}/>
+            <Nav/>
             <div className="header" id="header">
-        <h2>Witaj {this.props.user ? this.props.user : "gość"}</h2>
             </div>
         </header>
          );

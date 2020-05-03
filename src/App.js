@@ -12,30 +12,75 @@ import Top from './pages/Top';
 import MovieDetails from './components/details/MovieDetails';
 import Login from "./pages/Login";
 import AppContext from "./components/context";
+import * as firebase from "firebase/app";
+import firebaseConfig from "./config/firebase";
 
+firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
     state = { 
-        user:""
+        user:"",
+        email:"",
+        pass:"",
      }
 
-
-    auth = (user) => {
-        if(user) {
-            this.setState({user: user.email})
-        }else {
-            return;
-        }
+    
+    componentDidMount() {
+        this.authListener();
     }
 
-    
+
+    authListener() {
+        firebase.auth().onAuthStateChanged((user) => {
+            if(user) {
+                this.setState({user})
+            }else {
+                this.setState({user:null})
+            }
+        })
+    }
+
+    login = (e) => {
+        e.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).then((u) => {
+            console.log(u)
+            this.setState({user:u})
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+     }
+
+    signup = (e) => {
+       e.preventDefault();
+       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pass).then((u) => {
+           console.log(u)
+       }).catch((err) => {
+           console.log(err)
+       })
+    }
+
+    signOut = () => {
+        firebase.auth().signOut()
+    }
 
     
 
     render() { 
 
         const contextElements = {
-            test: this.test
+            user: this.state.user,
+            email: this.state.email,
+            pass: this.state.pass,
+            signup: this.signup,
+            handleChange: this.handleChange,
+            login: this.login,
+            signOut: this.signOut,
         }
 
         return ( 
@@ -54,7 +99,7 @@ class App extends Component {
                         <Top />
                     </Route>
                     <Route path="/Zaloguj">
-                        <Login auth={this.auth}/>
+                        <Login/>
                     </Route>
                     <Route path="/Film/:id">
                         <MovieDetails />
