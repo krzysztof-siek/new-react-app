@@ -9,9 +9,9 @@ class Header extends Component {
         return ( 
             <header>
       
-            <Nav />
+            <Nav  user={this.props.user}/>
             <div className="header" id="header">
-                
+        <h2>Witaj {this.props.user ? this.props.user : "gość"}</h2>
             </div>
         </header>
          );

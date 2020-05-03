@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import "./scss/App.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,14 +13,26 @@ import MovieDetails from './components/details/MovieDetails';
 import Login from "./pages/Login";
 
 
+class App extends Component {
+    state = { 
+        user:""
+     }
 
 
-function App() {
-    return (
-        <>
-        <div className="app">
+    auth = (user) => {
+        if(user) {
+            this.setState({user: user.email})
+        }else {
+            return;
+        }
+
+    }
+
+    render() { 
+        return ( 
+            <div className="app">
           <Router>
-            <Header/>
+            <Header user={this.state.user}/>
                 <Switch>
                     <Route path="/Filmy">
                         <Movies />
@@ -32,7 +44,7 @@ function App() {
                         <Top />
                     </Route>
                     <Route path="/Zaloguj">
-                        <Login />
+                        <Login auth={this.auth}/>
                     </Route>
                     <Route path="/Film/:id">
                         <MovieDetails />
@@ -41,8 +53,11 @@ function App() {
             </Router>
             <Footer/>
         </div>
-        </>
-      );
+         );
+    }
 }
-
+ 
 export default App;
+
+
+

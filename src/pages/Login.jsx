@@ -14,6 +14,14 @@ class Login extends Component {
          this.authListener();
      }
 
+     componentDidUpdate(prevProps, prevState) {
+        if(this.state.user !== prevState.user){
+            this.props.auth(this.state.user)
+        } else {
+            console.log('bez zmian')
+        }
+    }
+
      authListener() {
          firebase.auth().onAuthStateChanged((user) => {
              if(user) {
