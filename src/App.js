@@ -10,10 +10,11 @@ import Movies from './pages/Movies';
 import Serials from './pages/Serials';
 import Top from './pages/Top';
 import MovieDetails from './components/details/MovieDetails';
-import Login from "./pages/Login";
+import Auth from "./auth/Auth";
 import AppContext from "./components/context";
 import * as firebase from "firebase/app";
 import firebaseConfig from "./config/firebase";
+
 
 firebase.initializeApp(firebaseConfig);
 
@@ -43,7 +44,6 @@ class App extends Component {
     login = (e) => {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).then((u) => {
-            console.log(u)
             this.setState({user:u})
         }).catch((err) => {
             console.log(err)
@@ -59,7 +59,6 @@ class App extends Component {
     signup = (e) => {
        e.preventDefault();
        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pass).then((u) => {
-           console.log(u)
        }).catch((err) => {
            console.log(err)
        })
@@ -68,8 +67,7 @@ class App extends Component {
     signOut = () => {
         firebase.auth().signOut()
     }
-
-    
+   
 
     render() { 
 
@@ -99,13 +97,13 @@ class App extends Component {
                         <Top />
                     </Route>
                     <Route path="/Zaloguj">
-                        <Login/>
+                        <Auth user={this.state.user}/>
                     </Route>
                     <Route path="/Film/:id">
                         <MovieDetails />
                     </Route>
                 </Switch>
-                </AppContext.Provider>
+                </AppContext.Provider>            
                 <Footer/>
             </Router>
         </div>
