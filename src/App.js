@@ -11,6 +11,7 @@ import Serials from './pages/Serials';
 import Top from './pages/Top';
 import MovieDetails from './components/details/MovieDetails';
 import Login from "./pages/Login";
+import AppContext from "./components/context";
 
 
 class App extends Component {
@@ -25,14 +26,23 @@ class App extends Component {
         }else {
             return;
         }
-
     }
 
+    
+
+    
+
     render() { 
+
+        const contextElements = {
+            test: this.test
+        }
+
         return ( 
             <div className="app">
           <Router>
-            <Header user={this.state.user}/>
+              <AppContext.Provider value={contextElements}>
+                <Header user={this.state.user}/>
                 <Switch>
                     <Route path="/Filmy">
                         <Movies />
@@ -50,8 +60,9 @@ class App extends Component {
                         <MovieDetails />
                     </Route>
                 </Switch>
+                </AppContext.Provider>
+                <Footer/>
             </Router>
-            <Footer/>
         </div>
          );
     }

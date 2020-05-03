@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as firebase from "firebase/app";
 import firebaseConfig from "../config/firebase";
+import AppContext from "../components/context";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -56,10 +57,15 @@ class Login extends Component {
         })
      }
 
+     
+
     render() { 
+       
         return ( 
-            <>
-            <div className="main">
+             <AppContext.Consumer>
+                {(context) => (
+                    
+                    <div className="main">
                 <form>
                     <input type="email" placeholder="Email" id="email" name="email" onChange={this.handleChange} value={this.state.email}/>
                     <input type="password" placeholder="Pass" id="pass" name="pass" onChange={this.handleChange} value={this.state.pass}/>
@@ -75,8 +81,11 @@ class Login extends Component {
                 <br></br>
                 <h4>email : {this.state.email}</h4>
                 <h4>pass : {this.state.pass}</h4>
+                <button onClick={() => context.test(this.state.user)}>Test</button>
+
             </div>
-            </>
+            )}
+         </AppContext.Consumer>  
          );
     }
 }
