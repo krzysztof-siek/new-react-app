@@ -85,7 +85,7 @@ class App extends Component {
             <div className="app">
           <Router>
               <AppContext.Provider value={contextElements}>
-                <Header user={this.state.user}/>
+                <Header user={this.state.user} signOut={this.signOut}/>
                 <Switch>
                     <Route path="/Filmy">
                         <Movies />
@@ -97,7 +97,7 @@ class App extends Component {
                         <Top />
                     </Route>
                     <Route path="/Zaloguj">
-                        <Auth user={this.state.user}/>
+                        <Auth  />
                     </Route>
                     <Route path="/Film/:id">
                         <MovieDetails />
