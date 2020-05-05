@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import "./scss/App.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from "./layouts/partials/header";
 import Footer from "./layouts/partials/footer.jsx";
 import Movies from './pages/Movies';
@@ -25,6 +24,8 @@ class App extends Component {
         pass:"",
      }
 
+   
+
     
     componentDidMount() {
         this.authListener();
@@ -41,10 +42,13 @@ class App extends Component {
         })
     }
 
+   
+
     login = (e) => {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pass).then((u) => {
             this.setState({user:u})
+           
         }).catch((err) => {
             console.log(err)
         })
@@ -80,6 +84,8 @@ class App extends Component {
             login: this.login,
             signOut: this.signOut,
         }
+
+        
 
         return ( 
             <div className="app">
