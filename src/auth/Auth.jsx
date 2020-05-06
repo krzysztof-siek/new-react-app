@@ -40,7 +40,7 @@ return (
             <div class={this.state.rightActive ? "container" : "container right-panel-active" } id="container">
                 <div class="form-container sign-up-container">
                     <form action="#">
-                        <h1>Create Account</h1>
+                        <h1 className='auth-main'>Create Account</h1>
                         <div class="social-container">
                             <a href="#" class="social">
                                 <FontAwesomeIcon icon={faFacebookF} /></a>
@@ -49,16 +49,16 @@ return (
                             <a href="#" class="social">
                                 <FontAwesomeIcon icon={faLinkedinIn} /></a>
                         </div>
-                        <span>or use your email for registration</span>
+                        <span className="span">or use your email for registration</span>
                         <input type="text" placeholder="Name" name="username" onChange={context.handleChange} />
                         <input type="email" placeholder="Email" name="email" onChange={context.handleChange} />
                         <input type="password" placeholder="Password" name="pass" onChange={context.handleChange} />
-                        <button onClick={context.signup}>Zarejestruj</button>
+                        <button className="btn" onClick={context.signup}>Zarejestruj</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
                     <form action="#">
-                        <h1>Logowanie</h1>
+                        <h1 className="auth-main">Logowanie</h1>
                         <div class="social-container">
                             <a href="#" class="social">
                                 <FontAwesomeIcon icon={faFacebookF} /></a>
@@ -71,20 +71,20 @@ return (
                         <input type="email" placeholder="Email" name="email" onChange={context.handleChange} />
                         <input type="password" placeholder="Password" name="pass" onChange={context.handleChange} />
                         <a href="#">Zapomniałeś hasła? <span className="strong">Kliknij</span> </a>
-                        <button onClick={context.login}>Zaloguj</button>
+                        <button className="btn" onClick={context.login}>Zaloguj</button>
                     </form>
                 </div>
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
-                            <h1>Witaj ponownie!</h1>
-                            <p>Proszę zaloguj się aby w pełni korzystać z serwisu.</p>
-                            <button class="ghost" id="signIn" onClick={this.changeRightActive}>Logowanie</button>
+                            <h1 className="auth-main">Witaj ponownie!</h1>
+                            <p class="auth-sec">Proszę zaloguj się aby w pełni korzystać z serwisu.</p>
+                            <button  class="ghost btn " id="signIn" onClick={this.changeRightActive}>Logowanie</button>
                         </div>
                         <div class="overlay-panel overlay-right">
-                            <h1>Nie masz konta?</h1>
-                            <p>Zarejestruj się i zacznij z nami przygpdę .</p>
-                            <button class="ghost" id="signUp" onClick={this.changeRightActive}>Rejestracja</button>
+                            <h1 className="auth-main">Nie masz konta?</h1>
+                            <p class="auth-sec">Zarejestruj się i zacznij z nami przygpdę .</p>
+                            <button class="ghost btn" id="signUp" onClick={this.changeRightActive}>Rejestracja</button>
                         </div>
                     </div>
                 </div>

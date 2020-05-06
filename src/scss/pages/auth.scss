@@ -1,16 +1,14 @@
 
 .auth {
 
-    h1 {
+    .auth-main {
         font-weight: bold;
         margin: 0;
     }
 
-    h2 {
-        text-align: center;
-    }
 
-    p {
+
+    .auth-sec {
         font-size: 14px;
         font-weight: 100;
         line-height: 20px;
@@ -18,18 +16,18 @@
         margin: 20px 0 30px;
     }
 
-    span {
+    .span {
         font-size: 12px;
     }
 
-    a {
+    .social {
         color: #333;
         font-size: 14px;
         text-decoration: none;
         margin: 15px 0;
     }
 
-    button {
+    .btn {
         border-radius: 20px;
         border: 1px solid #FF4B2B;
         background-color: #FF4B2B;
@@ -42,15 +40,15 @@
         transition: transform 80ms ease-in;
     }
 
-    button:active {
+    .btn:active {
         transform: scale(0.95);
     }
 
-    button:focus {
+    .btn:focus {
         outline: none;
     }
 
-    button.ghost {
+    .btn.ghost {
         background-color: transparent;
         border-color: #FFFFFF;
     }
@@ -148,11 +146,8 @@
     }
 
     .overlay {
-        // background: #FF416C;
         background: url("/img/temporary/3.jpg");
         background-size: contain;
-        // background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-        // background: linear-gradient(to right, #FF4B2B, #FF416C);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 0 0;
