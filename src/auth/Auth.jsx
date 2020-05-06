@@ -13,16 +13,30 @@ state = {
 rightActive: true,
 }
 
+componentDidUpdate(prevProps, prevState) {
+           if(this.props.user !== prevState.user){
+            this.setState({user: this.props.user})
+           } 
+       }
+
+   
+       componentDidMount = () => {
+           this.setState({user:this.props.user})
+       }
+       
+
 changeRightActive = () => {
 this.setState({rightActive: !this.state.rightActive})
 }
+
+
 
 render() {
 return (
 <AppContext.Consumer>
     {(context) => (
     <>
-        {context.user != "" ? (<div className="auth">
+        {!this.state.user ? (<div className="auth">
             <div class={this.state.rightActive ? "container" : "container right-panel-active" } id="container">
                 <div class="form-container sign-up-container">
                     <form action="#">

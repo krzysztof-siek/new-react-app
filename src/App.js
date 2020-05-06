@@ -85,13 +85,15 @@ class App extends Component {
             signOut: this.signOut,
         }
 
+        const {user} = this.state;
+
         
 
         return ( 
             <div className="app">
           <Router>
               <AppContext.Provider value={contextElements}>
-                <Header user={this.state.user} signOut={this.signOut}/>
+                <Header user={user} signOut={this.signOut}/>
                 <Switch>
                     <Route path="/Filmy">
                         <Movies />
@@ -103,7 +105,7 @@ class App extends Component {
                         <Top />
                     </Route>
                     <Route path="/Zaloguj">
-                        <Auth  />
+                        <Auth  user={user}/>
                     </Route>
                     <Route path="/Film/:id">
                         <MovieDetails />
