@@ -1,7 +1,9 @@
 
 
 .slider {
-
+    .slick-slider {
+        z-index: 10;
+    }
     .slick-list {
         padding: 50px 0 !important;
     }

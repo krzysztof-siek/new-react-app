@@ -13,7 +13,7 @@ import Auth from "./auth/Auth";
 import AppContext from "./components/context";
 import * as firebase from "firebase/app";
 import firebaseConfig from "./config/firebase";
-
+import Nav from "./layouts/partials/nav";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -93,7 +93,8 @@ class App extends Component {
             <div className="app">
           <Router>
               <AppContext.Provider value={contextElements}>
-                <Header user={user} signOut={this.signOut}/>
+                  <Nav user={user} signOut={this.signOut}/>
+                {/* <Header user={user} signOut={this.signOut}/> */}
                 <Switch>
                     <Route path="/Filmy">
                         <Movies />

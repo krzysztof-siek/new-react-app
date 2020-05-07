@@ -54,7 +54,9 @@ class Movies extends Component {
         return ( 
             <>
               <div className="movies">
+                  <div className="movies-header">
                   <SimpleSlider moviesList={mostPopular}/>
+                  </div>
                   <div className="movies-list-cont">
                     <div className="container">
                         <div className="welcome">
