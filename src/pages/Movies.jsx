@@ -49,6 +49,7 @@ class Movies extends Component {
          })   
       }
 
+
     render() { 
         const {mostPopular,activeCategory, categoryMovies} = this.state;
         return ( 

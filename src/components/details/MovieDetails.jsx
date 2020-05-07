@@ -25,9 +25,14 @@ class MovieDetails extends Component {
         return ( 
            
             <div className="movie-details">
-                <h3>{title}</h3>
-                <h3>{overview}</h3>
-                <Link to="/Filmy"> Powrót </Link>
+                <div className="movie-header">
+                    <img src="/img/temporary/4.jpg" alt=""/>
+                </div>
+                <div className="movie-infos">
+                    <h3>{title}</h3>
+                    <h3>{overview}</h3>
+                    <Link to="/Filmy"> Powrót </Link>
+                </div>
             </div>
          );
     }
