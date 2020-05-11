@@ -5,7 +5,22 @@
         height: 800px;
         width: 100%;
         position: relative;
+        overflow: hidden;
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+        }
         &:after {
+            position: absolute;
+            bottom: 0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background: rgba(0,0,0,0.7);
+        }
+        &:before {
             position: absolute;
             bottom: 0;
             left:0;
@@ -14,13 +29,13 @@
             content: "";
             background: linear-gradient(0deg, rgba(19,21,31,1) 34%, rgba(19,21,31,0.8) 64%, rgba(0,212,255,0) 100%);
         }
-
-        img {
-            height: 100%;
-        }
     }
-    // .movie-infos {
-    //     background-color: pink;
-    //     z-index: 1000;
-    // }
+
+    .movie-infos-item {
+        position: absolute;
+        top:50%;
+        right:0;
+        // transform: translate(-50%, -50%);
+    }
+    
 }

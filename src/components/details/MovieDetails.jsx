@@ -21,17 +21,18 @@ class MovieDetails extends Component {
       }
 
     render() { 
-        const {title, overview} = this.state.movieDetails;
+        const {title, overview, backdrop_path, poster_path} = this.state.movieDetails;
+        console.log(this.state.movieDetails)
         return ( 
-           
             <div className="movie-details">
                 <div className="movie-header">
-                    <img src="/img/temporary/4.jpg" alt=""/>
+                    <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} alt="movie backdrop"/> 
                 </div>
-                <div className="movie-infos">
-                    <h3>{title}</h3>
+                <div className="movie-infos-item">
+                    
+                    {/* <h3>{title}</h3>
                     <h3>{overview}</h3>
-                    <Link to="/Filmy"> Powrót </Link>
+                    <Link to="/Filmy"> Powrót </Link> */}
                 </div>
             </div>
          );
