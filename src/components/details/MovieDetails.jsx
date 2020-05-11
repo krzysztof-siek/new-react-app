@@ -21,7 +21,7 @@ class MovieDetails extends Component {
       }
 
     render() { 
-        const {title, overview, backdrop_path, poster_path} = this.state.movieDetails;
+        const {title, overview, backdrop_path, poster_path, genres, release_date, vote_count, id} = this.state.movieDetails;
         console.log(this.state.movieDetails)
         return ( 
             <div className="movie-details">
@@ -29,7 +29,15 @@ class MovieDetails extends Component {
                     <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} alt="movie backdrop"/> 
                 </div>
                 <div className="movie-infos-item">
-                    
+                    <div className="item-poster">
+                        <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt=""/> 
+                    </div>
+                    <div className="item-infos">
+                        <h2 className="title">{title}</h2>
+        
+                        <h3 className="name">Movie</h3>
+        <h4>{overview}</h4>
+                    </div>
                     {/* <h3>{title}</h3>
                     <h3>{overview}</h3>
                     <Link to="/Filmy"> Powrót </Link> */}

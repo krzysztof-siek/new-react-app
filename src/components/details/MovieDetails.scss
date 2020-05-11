@@ -1,3 +1,5 @@
+@import "../../scss/variables.scss";
+
 .movie-details {
     color: white;
     .movie-header {
@@ -34,8 +36,28 @@
     .movie-infos-item {
         position: absolute;
         top:50%;
-        right:0;
-        // transform: translate(-50%, -50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark;
+        .item-poster {
+            transform: translate(0,0);
+        }
+        .item-infos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 500px;
+            padding:0 50px;
+        }
+        .title {
+            margin-bottom: 30px;
+        }
+        
     }
     
 }
