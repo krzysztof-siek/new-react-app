@@ -43,6 +43,9 @@ class MovieDetails extends Component {
                     </div>
                    
                 </div>
+                <div className="movie-details-content">
+                    <h3>Dupa Dupa Dupa</h3>
+                </div>
             </div>
          );
     }

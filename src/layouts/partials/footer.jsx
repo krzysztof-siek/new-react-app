@@ -48,7 +48,7 @@ return (
             </div>
             <div className="footer">
                 <h2>&copy;2020 <span className="strong">MoviePoint</span> All Rights Reserved. Code by Krzysztof Siek</h2>
-                <a href="#header" className="backToTop">Back to top<FontAwesomeIcon icon={faAngleUp} className='angleUp'/></a>
+                <a href="#nav" className="backToTop">Back to top<FontAwesomeIcon icon={faAngleUp} className='angleUp'/></a>
             </div>
         </div>
     </footer>

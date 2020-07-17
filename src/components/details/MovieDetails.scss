@@ -2,7 +2,6 @@
 
 .movie-details {
     color: white;
-    min-height: 1000px;
     .movie-header {
         margin-top: -150px;
         height: 800px;
@@ -32,6 +31,10 @@
             content: "";
             background: linear-gradient(0deg, #13151f 34%, rgba(19,21,31,0.8) 64%, rgba(19,21,31, 0) 100%);
         }
+    }
+
+    .movie-details-content {
+        min-height: 1000px;
     }
 
     .movie-infos-item {

@@ -12,7 +12,7 @@ function nav(props) {
 return (
 <nav>
     <div className="container">
-        <div className="nav">
+        <div className="nav" id="nav">
             <div className="nav-brand">
                 <picture>
                     <source srcSet="/img/general/logo.webp" type="image/webp" />
