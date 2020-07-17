@@ -5,7 +5,7 @@ import { faPlayCircle} from '@fortawesome/fontawesome-free-solid'
 
 
 const SliderItem = (props) => {
-    const {id, poster_path, title, release_date, vote_average, vote_count, overview} = props.movie;
+    const {id, poster_path, title,name, release_date, vote_average, vote_count, overview} = props.movie;
 return (
 <>
     <div className="slider-item">
@@ -14,7 +14,7 @@ return (
         </div>
         <div className="item-infos">
             <div className="flex-box">
-                <h3 className="item-title">{title}</h3>
+                <h3 className="item-title">{title ? title : name}</h3>
                 <h4 className="item-relase">{release_date}</h4>
             </div>
             <div className="flex-box-second">
@@ -27,7 +27,7 @@ return (
             <h4 className="item-desc">{overview}</h4>
             <div className="watch-trailer">
                 <h4 className="watch">Zobacz Trailer</h4>
-                <Link to={`/Film/${id}`} className="link">
+                <Link to={title ? `/Film/${id}` : `/Serial/${id}`} className="link">
                     <button className="btn btn-secondary"> <FontAwesomeIcon icon={faPlayCircle} size="2x"/>
                     Zobacz Video</button>
                 </Link>

@@ -111,6 +111,9 @@ class App extends Component {
                     <Route path="/Film/:id">
                         <MovieDetails />
                     </Route>
+                    <Route path="/Serial/:id">
+                        <MovieDetails />
+                    </Route>
                 </Switch>
                 </AppContext.Provider>            
                 <Footer/>

@@ -9,11 +9,15 @@ class MovieDetails extends Component {
      }
 
     getMovieDetalis = () => {
-        fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL`)
-
-  
-    .then(response => response.json())
-    .then(json => this.setState({ movieDetails: json}))
+        let isMovie = "movie"
+        if(this.props.match.url[1] == "F") {
+            isMovie = "movie"
+        } else {
+            isMovie = "tv"
+        }
+        fetch(`https://api.themoviedb.org/3/${isMovie}/${this.props.match.params.id}?api_key=77731e0cef7708f81c46f924efbac553&language=pl-PL`)   
+        .then(response => response.json())
+        .then(json => this.setState({ movieDetails: json}))
       }
   
       componentDidMount() {
@@ -21,8 +25,7 @@ class MovieDetails extends Component {
       }
 
     render() { 
-        const {title, overview, backdrop_path, poster_path, genres, release_date, vote_count, id} = this.state.movieDetails;
-        console.log(this.state.movieDetails)
+        const {title, name, overview, backdrop_path, poster_path, genres, release_date, vote_count, id} = this.state.movieDetails;
         return ( 
             <div className="movie-details">
                 <div className="movie-header">
@@ -33,14 +36,12 @@ class MovieDetails extends Component {
                         <img src={`https://image.tmdb.org/t/p/original${poster_path}`} alt=""/> 
                     </div>
                     <div className="item-infos">
-                        <h2 className="title">{title}</h2>
-        
-                        <h3 className="name">Movie</h3>
-        <h4>{overview}</h4>
+                        <h2 className="title">{title ? title : name}</h2>
+                        <h4>{overview}</h4>
+                      
+                    <Link to={title ? "/Filmy" : "/Seriale"} className='backLink'> Powrót </Link> 
                     </div>
-                    {/* <h3>{title}</h3>
-                    <h3>{overview}</h3>
-                    <Link to="/Filmy"> Powrót </Link> */}
+                   
                 </div>
             </div>
          );

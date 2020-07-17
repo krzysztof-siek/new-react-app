@@ -14,6 +14,7 @@ class Movies extends Component {
         categoryMovies: [],
         choosedCategory: "trending/movie/week",
         activeCategory: 1,
+        isMovie: true
      }
 
 
@@ -80,7 +81,7 @@ class Movies extends Component {
                            </ul>
                         </div>
                         <div className="movies-list">
-                            <TopRatedList movies={categoryMovies} />
+                            <TopRatedList movies={categoryMovies} isMovie={this.state.isMovie}/>
                         </div>
                     </div>
                   </div>
