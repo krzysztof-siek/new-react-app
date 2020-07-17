@@ -12,16 +12,10 @@
         img {
             width: 100%;
             height: auto;
+            filter: brightness(44%);
+-webkit-filter: brightness(44%);
         }
-        &:after {
-            position: absolute;
-            bottom: 0;
-            left:0;
-            width: 100%;
-            height: 100%;
-            content: "";
-            background: rgba(0,0,0,0.7);
-        }
+      
         &:before {
             position: absolute;
             bottom: 0;
@@ -29,12 +23,15 @@
             width: 100%;
             height: 30%;
             content: "";
-            background: linear-gradient(0deg, #13151f 34%, rgba(19,21,31,0.8) 64%, rgba(19,21,31, 0) 100%);
+            z-index: 1;
+            background: rgb(19,21,31);
+background: linear-gradient(0deg, rgba(19,21,31,1) 0%, rgba(19,21,31,0.891176538974965) 33%, rgba(19,21,31,0.664285782672444) 62%, rgba(19,21,31,0) 100%);
         }
     }
 
     .movie-details-content {
         min-height: 1000px;
+        padding-top: 400px;
     }
 
     .movie-infos-item {
@@ -46,17 +43,22 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-color: $dark;
+        background-color: $bgc;
+        box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.52);
+        width: 60%;
+        z-index: 1;
         .item-poster {
-            transform: translate(0,0);
+            transform: translate(50px,-50px);
         }
         .item-infos {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            height: 500px;
-            padding:50px;
+            height: 300px;
+            min-width: 600px;
+            padding:50px 50px 0px 100px;
+            
         }
         .title {
             margin-bottom: 30px;

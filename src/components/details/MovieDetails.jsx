@@ -26,6 +26,7 @@ class MovieDetails extends Component {
 
     render() { 
         const {title, name, overview, backdrop_path, poster_path, genres, release_date, vote_count, id} = this.state.movieDetails;
+        console.log(this.state.movieDetails)
         return ( 
             <div className="movie-details">
                 <div className="movie-header">
@@ -44,7 +45,9 @@ class MovieDetails extends Component {
                    
                 </div>
                 <div className="movie-details-content">
+                    <div className="container">
                     <h3>Dupa Dupa Dupa</h3>
+                    </div>
                 </div>
             </div>
          );
